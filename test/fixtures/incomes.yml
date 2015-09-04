@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wages: 
+  other_income: 
+  income_total: 
+
+two:
+  wages: 
+  other_income: 
+  income_total: 
