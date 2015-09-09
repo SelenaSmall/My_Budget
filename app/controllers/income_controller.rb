@@ -1,11 +1,13 @@
 class IncomeController < ApplicationController
-	before_action :set_income
+	before_action :set_income, only: [:show, :edit, :update, :destroy]
 
 def index
 end
 
+def new
+end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_income
       @income 
   	end
