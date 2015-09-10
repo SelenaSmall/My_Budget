@@ -1,0 +1,43 @@
+<%= form_for [@income] do |f| %>
+
+<table>
+  <tr>
+    <td>  
+    <div class="field">
+      <%= f.label :wages %><br>
+      </td>
+      <td>
+    <%= f.number_field :wages %>
+    </div>
+      </td>
+  </tr>
+
+  <tr>
+      <td> 
+    <div>
+      <%= f.label :other_income %><br>
+      </td>
+      <td>
+    <%= f.number_field :other_income %>
+    </div>
+      </td>
+  </tr>
+
+  <tr>
+      <td> 
+    <div>
+    <%= f.label :income_total %><br>
+      </td>
+      <td>
+    <%= f.number_field :income_total %>
+    </div>
+      </td>
+  </tr>
+  </table>
+
+<br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

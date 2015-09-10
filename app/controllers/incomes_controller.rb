@@ -1,19 +1,18 @@
 class IncomesController < ApplicationController
 	before_action :set_income, only: [:show, :edit, :update, :destroy]
 
-def index
-	@income = Income.all
-end
-
 def new
 	@income = Income.new
+end
+
+def edit
 end
 
 def create
 	@income = Income.new(income_params)
 	respond_to do |format|
     	if @income.save
-	  	  format.html { redirect_to incomes_path}
+	  	  format.html { redirect_to edit_income_path(@income)}
 		end
 	end
 end
@@ -21,7 +20,7 @@ end
 def update
 	respond_to do |format|
     	if @income.update(income_params)
-	  	  format.html { redirect_to (@incomes)}
+	  	  format.html { redirect_to edit_income_path(@income)}
 		end
 	end
 end
