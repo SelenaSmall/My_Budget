@@ -1,43 +1,40 @@
+<div class="bordered-form">
 <%= form_for [@income] do |f| %>
 
+<h1>Income</h1>
 <table>
   <tr>
-    <td>  
-    <div class="field">
-      <%= f.label :wages %><br>
+    <td class="field-name">  
+        <%= f.label :wages %><br>
       </td>
-      <td>
-    <%= f.number_field :wages %>
-    </div>
+      <td class="field">
+        <%= f.number_field :wages %>
+      </td>
+  </tr>
+
+
+  <tr>
+      <td class="field-name"> 
+        <%= f.label :other_income %><br>
+      </td>
+      <td class="field">
+        <%= f.number_field :other_income %>
       </td>
   </tr>
 
   <tr>
-      <td> 
-    <div>
-      <%= f.label :other_income %><br>
+      <td class="field-name" id="total-field-name">    
+        <%= f.label :income_total %><br>
       </td>
-      <td>
-    <%= f.number_field :other_income %>
-    </div>
+      <td class="field" id="total-field">
+        <%= f.number_field :income_total %>
       </td>
   </tr>
+</table>
 
-  <tr>
-      <td> 
-    <div>
-    <%= f.label :income_total %><br>
-      </td>
-      <td>
-    <%= f.number_field :income_total %>
-    </div>
-      </td>
-  </tr>
-  </table>
-
-<br>
   <div class="actions">
     <%= f.submit %>
   </div>
 
 <% end %>
+</div>

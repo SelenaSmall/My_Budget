@@ -1,3 +1,70 @@
-.actions {
-    font-size: 18px;
+.application {
+	background-color: #D6EAFF;
+	padding-top: 15px;
+	h1 {
+		font-size: 60px;
+		font-weight: bolder;
+		font-family: monospace;
+		color: black;
+	}
+}
+
+.navbar-default {
+	margin-bottom: 0px;
+	background-color: #D6EAFF;
+	border: none;
+	.dropdown-toggle {
+		padding: inherit;
+		padding-top: 20px;
+		padding-right: 20px;
+	}
+
+}
+
+.col-md-12 {
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.col-md-8 {
+	margin: 15px;
+}
+
+.bordered-form {
+	margin-left: 50;
+	padding: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #ADD6FF;
+	border-radius: 15px;
+	width: 750px;
+	
+	.field-name {
+		padding-left: 40px;
+	}
+
+	.field {
+		padding: 10px;
+		padding-left: 250px;
+	}
+
+	.actions {
+		padding-left: 472px;
+    	font-size: 18px;
+	}
+
+	h1 {
+		font-size: 40px;
+		font-weight: inherit;
+		border-bottom: solid black 1px;
+	}
+}
+
+#total-field-name {
+	font-size: 25px;
+	color: #1F3D99;
+}
+
+#income_income_total {
+	background-color: lightyellow;
 }
