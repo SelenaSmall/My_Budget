@@ -13,7 +13,7 @@ development:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: reservations
+  database: my_budget
   pool: 5
   username: selenasmall
   password:

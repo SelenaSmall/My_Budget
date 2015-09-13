@@ -10,6 +10,8 @@ gem 'mysql2'
 
 gem 'pg'
 
+gem 'composite_primary_keys'
+
 gem 'datagrid'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

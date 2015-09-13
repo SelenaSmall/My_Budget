@@ -17,11 +17,9 @@ ActiveRecord::Schema.define(version: 20150903122041) do
   enable_extension "plpgsql"
 
   create_table "incomes", force: :cascade do |t|
-    t.integer  "wages"
-    t.integer  "other_income"
-    t.integer  "income_total"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.decimal  "wages",        default: 0.0, null: false
+    t.decimal  "other_income", default: 0.0, null: false
+    t.datetime "value_from"
   end
 
 end

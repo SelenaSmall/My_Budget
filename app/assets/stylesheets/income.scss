@@ -46,6 +46,20 @@
 	.field {
 		padding: 10px;
 		padding-left: 250px;
+		
+		#income_other_income {
+			text-align: right;
+		}
+		#income_wages {
+			text-align: right;
+		}
+	}
+
+	.total-output {
+		text-align: right;
+		padding-right: 20px;
+		font-style: bold;
+		font-size: 40px
 	}
 
 	.actions {
@@ -63,8 +77,4 @@
 #total-field-name {
 	font-size: 25px;
 	color: #1F3D99;
-}
-
-#income_income_total {
-	background-color: lightyellow;
 }

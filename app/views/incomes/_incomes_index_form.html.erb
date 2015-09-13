@@ -8,7 +8,7 @@
         <%= f.label :wages %><br>
       </td>
       <td class="field">
-        <%= f.number_field :wages %>
+        <%= f.number_field :wages, :step => 0.01 %>
       </td>
   </tr>
 
@@ -18,17 +18,14 @@
         <%= f.label :other_income %><br>
       </td>
       <td class="field">
-        <%= f.number_field :other_income %>
+        <%= f.number_field :other_income, :step => 0.01 %>
       </td>
   </tr>
 
   <tr>
       <td class="field-name" id="total-field-name">    
-        <%= f.label :income_total %><br>
-      </td>
-      <td class="field" id="total-field">
-        <%= f.number_field :income_total %>
-      </td>
+        <%= f.label :total_income %><br></td>
+      <td class="total-output"><%= @income.total_income%></td>
   </tr>
 </table>
 

@@ -31,7 +31,7 @@ end
   	end
 
   	def income_params
-      params.require(:income).permit(:wages, :other_income, :income_total)
+      params.require(:income).permit(:wages, :other_income)
     end
 
 end
