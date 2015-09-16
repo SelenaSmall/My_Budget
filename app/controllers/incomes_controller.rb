@@ -1,9 +1,9 @@
 class IncomesController < ApplicationController
 	before_action :set_income, only: [:show, :edit, :update, :destroy]
 
-def new
-	@income = Income.new
-end
+#def new
+#	@income = Income.new
+#end
 
 def edit
 end
