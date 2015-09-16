@@ -1,5 +1,4 @@
 class CreateIncomes < ActiveRecord::Migration
-
   def change
     create_table :incomes do |t|
       t.decimal :wages, null: false, default: 0

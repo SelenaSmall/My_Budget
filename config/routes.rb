@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-root 'incomes#new'
- resources :incomes, except: [:show, :index]
-
+root 'expenses#new'
+ #resources :incomes, except: [:show, :index]
+ resources :expenses, except: [:show, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

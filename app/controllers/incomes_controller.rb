@@ -33,5 +33,4 @@ end
   	def income_params
       params.require(:income).permit(:wages, :other_income)
     end
-
 end

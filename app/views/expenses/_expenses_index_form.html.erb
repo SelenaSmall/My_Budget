@@ -1,31 +1,31 @@
 <div class="bordered-form">
-<%= form_for [@income] do |f| %>
+<%= form_for [@expense] do |f| %>
 
-<h1>Income</h1>
+<h1>expense</h1>
 <table>
   <tr>
     <td class="field-name">  
-        <%= f.label :wages %><br>
+        <%= f.label :outgoing %><br>
       </td>
       <td class="field">
-        <%= f.number_field :wages, :step => 0.01 %>
+        <%= f.number_field :outgoing, :step => 0.01 %>
       </td>
   </tr>
 
 
   <tr>
       <td class="field-name"> 
-        <%= f.label :other_income %><br>
+        <%= f.label :oneoff %><br>
       </td>
       <td class="field">
-        <%= f.number_field :other_income, :step => 0.01 %>
+        <%= f.number_field :oneoff, :step => 0.01 %>
       </td>
   </tr>
 
   <tr>
       <td class="field-name" id="total-field-name">    
-        <%= f.label :total_income %><br></td>
-      <td class="total-output"><%= @income.total_income%></td>
+        <%= f.label :total_expense %><br></td>
+      <td class="total-output"><%= @expense.total_expense%></td>
   </tr>
 </table>
   
