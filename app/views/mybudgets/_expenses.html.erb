@@ -1,0 +1,31 @@
+<div class="bordered-form" >
+
+<h2>Expenses</h2>
+
+<div> - this will do the same as above. There will be links for each allowing for the calculation of new expenses added on the spot.</div>
+
+<%= link_to 'Add Expense', new_mybudget_expense_path(@mybudget, @expense) %>
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th>Expense Type</th>
+      <th>Amount</th>
+     </tr>
+  </thead>
+    <tbody>
+    	<% @mybudget.expenses.each do |expense| %>
+      <tr>
+        <div id="expenses"></div>
+          <td><%= expense.expense %></td>
+          <td><%= expense.amount %></td>
+          <td></td>
+    <% end %>
+  </tbody>
+</table>
+<br>
+  <div>TOTAL EXPENSES</div>
+  <div class="total-output"><%= Expense.sum(:amount) %>
+
+</div>
+</div>

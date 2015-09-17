@@ -1,34 +1,33 @@
 <div class="bordered-form">
-<%= form_for [@expense] do |f| %>
+<%= form_for [@mybudget, @income] do |f| %>
 
-<h1>expense</h1>
 <table>
   <tr>
     <td class="field-name">  
-        <%= f.label :outgoing %><br>
+        <%= f.label :income %><br>
       </td>
       <td class="field">
-        <%= f.number_field :outgoing, :step => 0.01 %>
+        <%= f.text_field :income %>
       </td>
   </tr>
 
-
   <tr>
       <td class="field-name"> 
-        <%= f.label :oneoff %><br>
+        <%= f.label :amount %><br>
       </td>
       <td class="field">
-        <%= f.number_field :oneoff, :step => 0.01 %>
+        <%= f.number_field :amount %>
       </td>
   </tr>
 
   <tr>
       <td class="field-name" id="total-field-name">    
-        <%= f.label :total_expense %><br></td>
-      <td class="total-output"><%= @expense.total_expense%></td>
+        <%= f.label :total_income %><br></td>
+      <td class="total-output"><%= @income.total_income%></td>
   </tr>
+
 </table>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>

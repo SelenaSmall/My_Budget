@@ -11,20 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916090038) do
+ActiveRecord::Schema.define(version: 20150917073356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "expenses", force: :cascade do |t|
-    t.decimal  "outgoing",   default: 0.0, null: false
-    t.decimal  "oneoff",     default: 0.0, null: false
+    t.integer  "mybudget_id"
+    t.string   "expense",     limit: 100,               null: false
+    t.decimal  "amount",                  default: 0.0, null: false
     t.datetime "value_from"
   end
 
+  add_index "expenses", ["mybudget_id"], name: "index_expenses_on_mybudget_id", using: :btree
+
   create_table "incomes", force: :cascade do |t|
-    t.decimal  "wages",        default: 0.0, null: false
-    t.decimal  "other_income", default: 0.0, null: false
+    t.integer  "mybudget_id"
+    t.string   "income",      limit: 100,               null: false
+    t.decimal  "amount",                  default: 0.0, null: false
+    t.datetime "value_from"
+  end
+
+  add_index "incomes", ["mybudget_id"], name: "index_incomes_on_mybudget_id", using: :btree
+
+  create_table "mybudgets", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.decimal  "open_bal",   default: 0.0, null: false
     t.datetime "value_from"
   end
 

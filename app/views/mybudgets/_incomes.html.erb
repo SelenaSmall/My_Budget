@@ -1,0 +1,30 @@
+<div class="bordered-form" >
+
+<h2>Incomes</h2>
+
+<div> - this is going to be an incomes show page which will list all of the incomes and allow the user to add new income values as the week goes. In the long run this will help keep track of projections.</div>
+
+<%= link_to 'Add Income', new_mybudget_income_path(@mybudget, @income) %>
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th>Incomes</th>
+     </tr>
+  </thead>
+    <tbody>
+      <% @mybudget.incomes.each do |income| %>
+      <tr>
+        <div id="incomes"></div>
+          <td class="table-items"><%= income.income %></td>
+          <td class="amount">$<%= income.amount %></td>
+          <td></td>
+    <% end %>
+  </tbody>
+</table>
+<br>
+  <div>TOTAL INCOME</div> 
+  <div class="total-output"><%= Income.sum(:amount) %>
+
+</div>
+</div>

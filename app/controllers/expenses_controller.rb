@@ -1,20 +1,27 @@
 class ExpensesController < ApplicationController
+	before_action :set_mybudget
 	before_action :set_expense, only: [:show, :edit, :update, :destroy]
 
-#def new
-#	@expense = Expense.new
-#end
+def index
+  @expenses = @mybudget.expenses.all
+end
 
-def edit
+def new
+	@expense = @mybudget.expenses.build
 end
 
 def create
-	@expense = Expense.new(expense_params)
+	@expense = @mybudget.expenses.build(expense_params)
+
 	respond_to do |format|
-    	if @expense.save
-	  	  format.html { redirect_to edit_expense_path(@expense)}
-		end
-	end
+    if @expense.save
+        format.html { redirect_to [@mybudget, @expenses], notice: 'expense was successfully created.' }
+        format.json { render :show, status: :created, location: @expense }
+      else
+        format.html { render :new }
+        format.json { render json: @expense.errors, status: :unprocessable_entity }
+      end
+    end
 end
 
 def update
@@ -26,11 +33,15 @@ def update
 end
 
   private
+  	def set_mybudget
+      @mybudget = Mybudget.find(params[:mybudget_id])
+    end
+
     def set_expense
       @expense = Expense.find(params[:id])
   	end
 
   	def expense_params
-      params.require(:expense).permit(:outgoing, :oneoff)
+      params.require(:expense).permit(:expense, :amount)
     end
 end
