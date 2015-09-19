@@ -1,29 +1,27 @@
 <div class="bordered-form">
-<%= form_for [@mybudget] do |f| %>
-
-<h1>New Budget</h1>
-<table>
-  <tr>
+ <%= form_for [@mybudget] do |f| %>
+  <h1>New Budget</h1>
+  <table>
+   <tr>
     <td class="field-name">  
-        <%= f.label :name %><br>
-      </td>
-      <td class="field">
-        <%= f.text_field :name %>
-      </td>
-  </tr>
-
-  <tr>
-      <td class="field-name"> 
-        <%= f.label :open_bal %><br>
-      </td>
-      <td class="field">
-        <%= f.number_field :open_bal, :step => 0.01 %>
-      </td>
-  </tr>
+     <%= f.label :name %><br>
+    </td>
+    <td class="field">
+     <%= f.text_field :name %>
+    </td>
+   </tr>
+   <tr>
+    <td class="field-name"> 
+     <%= f.label :open_bal %><br>
+    </td>
+    <td class="field">
+     <%= f.number_field :open_bal, :step => 0.01 %>
+    </td>
+   </tr>
+  </table>
 
   <div class="actions">
-    <%= f.submit %>
+   <%= f.submit %>
   </div>
-
-<% end %>
+ <% end %>
 </div>

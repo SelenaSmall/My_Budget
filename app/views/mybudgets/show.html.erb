@@ -1,18 +1,21 @@
 <div class="row">
 	<div class="col-md-8">
-		
-	  <center><div class="summary-row">
-	  	<table>
-	  	  <tr>
-	  	  	<td id="total-field-name">OPENING BALANCE</td>
-			<td class="total-field">$<%= @mybudget.open_bal %></td>
-		  </tr>
-		</table>
-	  </div></center>
-
-		<center><div><%= render 'mybudgets/incomes' %>
-		<%= render 'mybudgets/expenses' %></div></center>
-		
+	 <center>
+	 	<div class="summary-row">
+	   <table>
+	  	 <tr>
+	  	  <td id="total-field-name">OPENING BALANCE</td>
+			   <td class="total-field">$<%= @mybudget.open_bal %></td>
+		   </tr>
+		  </table>
+	  </div>
+	 </center>
+		<center>
+			<div>
+				<%= render 'mybudgets/incomes' %>
+				<%= render 'mybudgets/expenses' %>
+		 </div>
+		</center>
 	</div>
 	<div class="col-md-4">
 	</div>
