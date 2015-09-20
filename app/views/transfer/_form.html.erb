@@ -1,0 +1,25 @@
+<div class="bordered-form">
+ <%= form_for [@mybudget, @transfer] do |f| %>
+
+  <table>
+   <tr>
+    <td class="field-name">  
+     <%= f.label :transfer %><br>
+    </td>
+    <td class="field"><%= f.text_field :transfer %></td>
+   </tr>
+   <tr>
+    <td class="field-name"> <%= f.label :amount %><br></td>
+    <td class="field"><%= f.number_field :amount %></td>
+   </tr>
+   <tr>
+    <td class="field-name" id="total-field-name">    
+     <%= f.label :total_transfer %><br></td>
+    <td class="total-output"><%= @transfer.total_transfer%></td>
+   </tr>
+  </table>
+  <div class="actions">
+   <%= f.submit %>
+  </div>
+ <% end %>
+</div>

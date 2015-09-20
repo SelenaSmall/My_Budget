@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917073356) do
+ActiveRecord::Schema.define(version: 20150920064544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,5 +39,14 @@ ActiveRecord::Schema.define(version: 20150917073356) do
     t.decimal  "open_bal",   default: 0.0, null: false
     t.datetime "value_from"
   end
+
+  create_table "transfers", force: :cascade do |t|
+    t.integer  "mybudget_id"
+    t.string   "transfer",    limit: 100,               null: false
+    t.decimal  "amount",                  default: 0.0, null: false
+    t.datetime "value_from"
+  end
+
+  add_index "transfers", ["mybudget_id"], name: "index_transfers_on_mybudget_id", using: :btree
 
 end

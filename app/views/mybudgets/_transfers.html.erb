@@ -1,0 +1,32 @@
+<div class="bordered-form" >
+ <h2>transfers</h2>
+ <div> - this is going to be an transfers show page which will list all of the transfers and allow the user to add new transfer values as the week goes. In the long run this will help keep track of projections.</div>
+ 
+ <!--<%= link_to 'Add transfer', new_mybudget_transfer_path(@mybudget, @transfer) %>-->
+ <%= link_to new_mybudget_transfer_path(@mybudget, @transfer), 
+  remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
+ <%end%>
+
+
+ <table class="table" >
+  <thead>
+   <tr>
+    <th>transfers</th>
+   </tr>
+  </thead>
+  <tbody>
+   <% @mybudget.transfers.each do |transfer| %>
+    <tr>
+     <div id="transfers"></div>
+     <td class="table-items"><%= transfer.transfer %></td>
+     <td class="amount">$<%= transfer.amount %></td>
+     <td></td>
+    </tr>
+   <% end %>
+  </tbody>
+ </table>
+ <br>
+ <div>TOTAL transfer</div> 
+ <div class="total-output"><%= Transfer.sum(:amount) %>
+ </div>
+</div>
