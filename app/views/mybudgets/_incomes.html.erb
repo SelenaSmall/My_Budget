@@ -1,8 +1,7 @@
 <div class="bordered-form" >
  <h2>Incomes</h2>
  <div> - this is going to be an incomes show page which will list all of the incomes and allow the user to add new income values as the week goes. In the long run this will help keep track of projections.</div>
- 
- <!--<%= link_to 'Add Income', new_mybudget_income_path(@mybudget, @income) %>-->
+
  <%= link_to new_mybudget_income_path(@mybudget, @income), 
   remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
  <%end%>

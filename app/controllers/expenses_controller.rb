@@ -17,6 +17,7 @@ def create
     if @expense.save
         format.html { redirect_to [@mybudget, @expenses], notice: 'expense was successfully created.' }
         format.json { render :show, status: :created, location: @expense }
+        format.js {redirect_via_turbolinks_to [@mybudget, @expenses]}
       else
         format.html { render :new }
         format.json { render json: @expense.errors, status: :unprocessable_entity }

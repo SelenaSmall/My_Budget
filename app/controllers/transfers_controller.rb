@@ -1,4 +1,4 @@
-class TransferController < ApplicationController
+class TransfersController < ApplicationController
 	before_action :set_mybudget
 	before_action :set_transfer, only: [:show, :edit, :update, :destroy]
 

@@ -2,7 +2,10 @@
 
  <h2>Expenses</h2>
  <div> - this will do the same as above. There will be links for each allowing for the calculation of new expenses added on the spot.</div>
- <%= link_to 'Add Expense', new_mybudget_expense_path(@mybudget, @expense) %>
+
+ <%= link_to new_mybudget_expense_path(@mybudget, @expense), 
+  remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
+ <%end%>
 
  <table class="table" >
   <thead>

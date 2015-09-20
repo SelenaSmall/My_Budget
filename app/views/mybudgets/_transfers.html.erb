@@ -1,8 +1,7 @@
 <div class="bordered-form" >
- <h2>transfers</h2>
+ <h2>Transfers</h2>
  <div> - this is going to be an transfers show page which will list all of the transfers and allow the user to add new transfer values as the week goes. In the long run this will help keep track of projections.</div>
  
- <!--<%= link_to 'Add transfer', new_mybudget_transfer_path(@mybudget, @transfer) %>-->
  <%= link_to new_mybudget_transfer_path(@mybudget, @transfer), 
   remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
  <%end%>
