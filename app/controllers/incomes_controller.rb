@@ -20,6 +20,7 @@ def create
     if @income.save
         format.html { redirect_to [@mybudget, @incomes], notice: 'income was successfully created.' }
         format.json { render :show, status: :created, location: @income }
+        format.js {redirect_via_turbolinks_to [@mybudget, @incomes]}
       else
         format.html { render :new }
         format.json { render json: @income.errors, status: :unprocessable_entity }

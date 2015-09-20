@@ -1,0 +1,29 @@
+<div class="modal-dialog reorder-modal-form">
+ <div class="modal-content">
+  <%= bootstrap_form_for([@mybudget, @income], remote: true) do |f| %>
+   <div class="modal-header">
+    <h4 class="modal-title">New Income</h4>
+   </div>
+
+   <div class="modal-body">
+ 	  <table>
+     <tr>
+      <td class="field-name">  
+       <%= f.label :income %><br>
+      </td>
+      <td class="field"><%= f.text_field :income %></td>
+     </tr>
+     <tr>
+      <td class="field-name"> <%= f.label :amount %><br></td>
+      <td class="field"><%= f.number_field :amount %></td>
+     </tr>
+    </table>
+   </div>
+
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal" data-behaviour="form-clear">Cancel</button>
+     <%= f.submit class: "btn btn-primary", data: { trigger: 'loading' } %>
+   </div>
+  <% end %>
+ </div>
+</div>
