@@ -22,10 +22,12 @@
      <td></td>
     </tr>
    <% end %>
+   <tr>
+   </tr>
+   <tr>
+     <td class="table-items">TOTAL INCOME</td> 
+     <td class="total-output"><%= Income.sum(:amount) %></td>
+   </tr>
   </tbody>
  </table>
- <br>
- <div>TOTAL INCOME</div> 
- <div class="total-output"><%= Income.sum(:amount) %>
- </div>
 </div>
