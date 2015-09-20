@@ -37,7 +37,6 @@
 		padding-top: 20px;
 		padding-right: 20px;
 	}
-
 }
 
 .col-md-12 {
@@ -49,16 +48,47 @@
 	margin: 15px;
 }
 
+.col-md-3 {
+}
+
 .bordered-form {
 	margin-left: 50px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 20px;
-	padding-left: 40px;
-	padding-right: 40px;
+
 	background-color: #ADD6FF;
 	border-radius: 15px;
 	width: 750px;
+
+	.bordered-form-header {
+		font-size: -webkit-xxx-large;
+		text-align: left;
+		border-bottom: solid black 1px;
+
+		.bordered-form-header-note {
+			padding-left: 20;
+			font-size: 12px;
+		}
+	}
+
+	.bordered-form-footer {
+		font-size: -small;
+		text-align: left;
+		border-bottom: solid black 1px;
+
+		.bordered-form-footer-total {
+			text-align: right;
+			padding-left: 20;
+			font-size: 12px;
+		}
+	}
+
+	.bordered-form-new-item {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: right;
+	}
 
 	.field-name {
 		padding-left: 40px;
@@ -77,23 +107,14 @@
 		text-align: right;
 	}
 
-	.total-output {
+	.bordered-form-total {
 		text-align: right;
-		padding-right: 20px;
 		font-style: bold;
-		font-size: 40px
+		font-size: 40px;
 	}
 
 	.actions {
 		padding-left: 472px;
     	font-size: 18px;
 	}
-
-	h2 {
-		font-size: 40px;
-		font-weight: inherit;
-		border-bottom: solid black 1px;
-		text-align: left;
-	}
-
 }

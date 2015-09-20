@@ -1,18 +1,19 @@
 <div class="bordered-form" >
- <h2>Incomes</h2>
- <div> - this is going to be an incomes show page which will list all of the incomes and allow the user to add new income values as the week goes. In the long run this will help keep track of projections.</div>
-
- <%= link_to new_mybudget_income_path(@mybudget, @income), 
-  remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
- <%end%>
-
-
- <table class="table" >
-  <thead>
+ <table class="bordered-form-header">
    <tr>
-    <th>Incomes</th>
+    <td>Incomes</td>
+    <td class="bordered-form-header-note">Incomes show page will list all of the incomes and allow the user to add new income values throughout the week.
+    </td>
    </tr>
-  </thead>
+ </table>
+
+ <div class="bordered-form-new-item">
+  <%= link_to new_mybudget_income_path(@mybudget, @income), 
+    remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %>Add Income
+  <%end%>
+ </div>
+  
+ <table class="table">
   <tbody>
    <% @mybudget.incomes.each do |income| %>
     <tr>
@@ -23,11 +24,13 @@
     </tr>
    <% end %>
    <tr>
-   </tr>
-   <tr>
-     <td class="table-items">TOTAL INCOME</td> 
-     <td class="total-output"><%= Income.sum(:amount) %></td>
-   </tr>
   </tbody>
+  <tfoot class="bordered-form-total">
+    <tr>
+      <td>TOTAL INCOME</td> 
+      <td>$<%= Income.sum(:amount) %></td>
+      <td></td>
+    </tr>
+  </tfoot>
  </table>
-</div>
+ </div>
