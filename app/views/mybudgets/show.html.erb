@@ -4,19 +4,23 @@
 	 	<div class="summary-row">
 	   <table>
 	  	 <tr>
-	  	  <td id="total-field-name">OPENING BALANCE</td>
+	  	  <td class="total-field-name">OPENING BALANCE</td>
 			   <td class="total-field">$<%= @mybudget.open_bal %></td>
 		   </tr>
 		  </table>
 	  </div>
-	 </center>
-		<center>
 			<div>
 				<%= render 'mybudgets/incomes' %>
 				<%= render 'mybudgets/expenses' %>
 				<%= render 'mybudgets/transfers' %>
-		 </div>
-		 <div class="total-output">BALANCE FORWARD<%= Mybudget.sum(:open_bal)+Income.sum(:amount)-Expense.sum(:amount)-Transfer.sum(:amount) %>
+		 </div>	 	
+		 <div class="summary-row">
+	   <table>
+	  	 <tr>
+		    <td class="total-field-name">BALANCE FORWARD</td>
+		 	  <td class="total-field">$<%= Mybudget.sum(:open_bal)+Income.sum(:amount)-Expense.sum(:amount)-Transfer.sum(:amount) %></td>
+		 		</tr>
+		  </table>
 		 </div>
 		</center>
 	</div>
