@@ -16,10 +16,13 @@
 				<%= render 'mybudgets/expenses' %>
 				<%= render 'mybudgets/transfers' %>
 		 </div>
+		 <div class="total-output">BALANCE FORWARD<%= Mybudget.sum(:open_bal)+Income.sum(:amount)-Expense.sum(:amount)-Transfer.sum(:amount) %>
+		 </div>
 		</center>
 	</div>
 	<div class="col-md-4">
 	</div>
+
 
 	<!-- Modal form -->
 		<div class="modal fade" id='new-income-modal-form' role='dialog'></div>
