@@ -1,36 +1,23 @@
 <div class="row">
-	<div class="col-md-8">
+ <div class="page-body">
 	 <center>
-	 	<div class="summary-row">
-	   <table>
-	  	 <tr>
-	  	  <td class="total-field-name">OPENING BALANCE</td>
-			   <td class="total-field">$<%= @mybudget.open_bal %></td>
-		   </tr>
-		  </table>
-	  </div>
-			<div>
+		 <div>
+		 	<%= render 'header' %>
+		 	<%= render 'opening_balance' %>
 				<%= render 'mybudgets/incomes' %>
 				<%= render 'mybudgets/expenses' %>
 				<%= render 'mybudgets/transfers' %>
+				<%= render 'balance' %>
 		 </div>	 	
-		 <div class="summary-row">
-	   <table>
-	  	 <tr>
-		    <td class="total-field-name">BALANCE FORWARD</td>
-		 	  <td class="total-field">$<%= Mybudget.sum(:open_bal)+Income.sum(:amount)-Expense.sum(:amount)-Transfer.sum(:amount) %></td>
-		 		</tr>
-		  </table>
-		 </div>
 		</center>
-	</div>
-	<div class="col-md-4">
-	</div>
 
-
-	<!-- Modal form -->
+	 <!-- Modal form -->
 		<div class="modal fade" id='new-income-modal-form' role='dialog'></div>
-		<div class="modal fade" id='new-expense-modal-form' role='dialog'></div>
-		<div class="modal fade" id='new-transfer-modal-form' role='dialog'></div>
-	<!-- Modal form -->
+		<div class="modal fade" id='edit-income-modal-form' role='dialog'></div>
+	 <div class="modal fade" id='new-expense-modal-form' role='dialog'></div>
+	 <div class="modal fade" id='edit-expense-modal-form' role='dialog'></div>
+	 <div class="modal fade" id='new-transfer-modal-form' role='dialog'></div>
+	 <div class="modal fade" id='edit-transfer-modal-form' role='dialog'></div>
+	 <!-- Modal form -->
+ </div>
 </div>

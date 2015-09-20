@@ -29,9 +29,22 @@ def update
 	respond_to do |format|
     	if @expense.update(expense_params)
 	  	  format.html { redirect_to edit_expense_path(@expense)}
-		end
-	end
-end
+		    format.json { render :show, status: :ok, location: @expense }
+        format.js {redirect_via_turbolinks_to [@mybudget, @expenses]}
+      else
+        format.html { render :edit }
+        format.json { render json: @expense.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @expense.destroy
+    respond_to do |format|
+      format.html { redirect_to mybudget_expenses_path(@mybudget), notice: 'user was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
   	def set_mybudget

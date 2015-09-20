@@ -1,16 +1,16 @@
 <div class="modal-dialog reorder-modal-form">
  <div class="bordered-form">
   <div class="modal-content">
-   <%= bootstrap_form_for([@mybudget, @transfer], remote: true) do |f| %>
+   <%= bootstrap_form_for([@mybudget, @income], remote: true) do |f| %>
     <div class="modal-header">
-     <h4 class="modal-title">New Transfer</h4>
+     <h4 class="modal-title">Edit Income</h4>
     </div>
-
+    
     <center>
      <div class="modal-body">
       <table class="modal-form-table">
        <tr>
-        <td class="field"><%= f.text_field :transfer %></td>
+        <td class="field"><%= f.text_field :income %></td>
        </tr>
        <tr>
         <td class="field"><%= f.number_field :amount %></td>

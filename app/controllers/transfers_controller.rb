@@ -32,9 +32,22 @@ class TransfersController < ApplicationController
 		respond_to do |format|
     	if @transfer.update(transfer_params)
 	  	  format.html { redirect_to edit_transfer_path(@transfer)}
-			end
-		end
-	end
+			   format.json { render :show, status: :ok, location: @transfer }
+        format.js {redirect_via_turbolinks_to [@mybudget, @transfers]}
+      else
+        format.html { render :edit }
+        format.json { render json: @transfer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @transfer.destroy
+    respond_to do |format|
+      format.html { redirect_to mybudget_trasfers_path(@mybudget), notice: 'user was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
     def set_mybudget

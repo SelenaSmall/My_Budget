@@ -1,17 +1,15 @@
-<div class="bordered-form" >
+<div class="bordered-form">
  <table class="bordered-form-header">
    <tr>
-    <td>Incomes</td>
-    <td class="bordered-form-header-note">Incomes show page will list all of the incomes and allow the user to add new income values throughout the week.
+    <td class="bordered-form-note">Incomes show page will list all of the incomes and allow the user to add new income values throughout the week.
+    </td>
+    <td>
+     <%= link_to new_mybudget_income_path(@mybudget, @income), 
+       remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %>Add Income
+     <%end%>
     </td>
    </tr>
  </table>
-
- <div class="bordered-form-new-item">
-  <%= link_to new_mybudget_income_path(@mybudget, @income), 
-    remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %>Add Income
-  <%end%>
- </div>
   
  <table class="table">
   <tbody>
@@ -20,14 +18,17 @@
      <div id="incomes"></div>
      <td class="table-items"><%= income.income %></td>
      <td class="amount">$<%= income.amount %></td>
-     <td></td>
+     <td>
+      <%= link_to edit_mybudget_income_path(@mybudget, income), 
+       remote: true, id: "edit-item-link", class: "btn btn-sm btn-default round" do %>Edit
+      <%end%>
+     </td>
     </tr>
    <% end %>
-   <tr>
   </tbody>
   <tfoot class="bordered-form-total">
     <tr>
-      <td>TOTAL INCOME</td> 
+      <td>plus INCOME</td> 
       <td>$<%= Income.sum(:amount) %></td>
       <td></td>
     </tr>

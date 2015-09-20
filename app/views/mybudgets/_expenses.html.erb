@@ -1,33 +1,36 @@
 <div class="bordered-form" >
-
- <h2>Expenses</h2>
- <div> - this will do the same as above. There will be links for each allowing for the calculation of new expenses added on the spot.</div>
-
- <%= link_to new_mybudget_expense_path(@mybudget, @expense), 
-  remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
- <%end%>
+ <table class="bordered-form-header">
+  <tr>
+   <td class="bordered-form-note">This will do the same as above. Total expenses will be deducted in the calculation</td>
+   <td>
+    <%= link_to new_mybudget_expense_path(@mybudget, @expense), 
+     remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %>Add Expense
+    <%end%>
+   </td>
+  </tr>
+ </table>
 
  <table class="table" >
-  <thead>
-   <tr>
-    <th>Expense Type</th>
-    <th>Amount</th>
-   </tr>
-  </thead>
   <tbody>
    <% @mybudget.expenses.each do |expense| %>
     <tr>
      <div id="expenses"></div>
-     <td><%= expense.expense %></td>
-     <td><%= expense.amount %></td>
-     <td></td>
+     <td class="table-items"><%= expense.expense %></td>
+     <td class="amount">$<%= expense.amount %></td>
+     <td>
+      <%= link_to edit_mybudget_expense_path(@mybudget, expense), 
+       remote: true, id: "edit-item-link", class: "btn btn-sm btn-default round" do %>Edit
+      <%end%>
+     </td>
     </tr>
    <% end %>
   </tbody>
+  <tfoot class="bordered-form-total">
+   <tr>
+    <td>less EXPENSES</td>
+    <td>$<%= Expense.sum(:amount) %></td>
+    <td></td>
+   </tr>
+  </tfoot>
  </table>
- 
- <br>
- <div>TOTAL EXPENSES</div>
- <div class="total-output"><%= Expense.sum(:amount) %>
- </div>
 </div>

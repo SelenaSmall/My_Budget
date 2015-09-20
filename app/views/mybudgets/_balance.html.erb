@@ -1,0 +1,12 @@
+<div class="bordered-form">
+ <div class="summary-row">
+	 <table class="table">
+	 	<tbody  class="bordered-form-total">
+	   <tr>
+		   <td class="table-items" id="total-field-name">BALANCE</td>
+		 	 <td class="amount" id="total-field">$<%= Mybudget.sum(:open_bal)+Income.sum(:amount)-Expense.sum(:amount)-Transfer.sum(:amount) %></td>
+		  </tr>
+		 </tbody>
+	 </table>
+ </div>
+</div>

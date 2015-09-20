@@ -1,31 +1,35 @@
 <div class="bordered-form" >
- <h2>Transfers</h2>
- <div> - this is going to be an transfers show page which will list all of the transfers and allow the user to add new transfer values as the week goes. In the long run this will help keep track of projections.</div>
- 
- <%= link_to new_mybudget_transfer_path(@mybudget, @transfer), 
-  remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> New
- <%end%>
+ <table class="bordered-form-header">
+  <tr>
+   <td class="bordered-form-note">Transfers will list all of the transfers and allow the user to add new transfer values as the week goes.</td>
+   <td>
+    <%= link_to new_mybudget_transfer_path(@mybudget, @transfer), 
+     remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %>Add Transfer
+    <%end%>
+   </td>
+  </tr>
+ </table>
 
-
- <table class="table" >
-  <thead>
-   <tr>
-    <th>transfers</th>
-   </tr>
-  </thead>
+ <table class="table">
   <tbody>
    <% @mybudget.transfers.each do |transfer| %>
     <tr>
      <div id="transfers"></div>
      <td class="table-items"><%= transfer.transfer %></td>
      <td class="amount">$<%= transfer.amount %></td>
-     <td></td>
+     <td>
+      <%= link_to edit_mybudget_transfer_path(@mybudget, transfer), 
+       remote: true, id: "edit-item-link", class: "btn btn-sm btn-default round" do %>Edit
+      <%end%>
+     </td>
     </tr>
    <% end %>
   </tbody>
+  <tfoot class="bordered-form-total">
+   <tr>
+    <td>less TRANSFERS</td> 
+    <td>$<%= Transfer.sum(:amount) %></td>
+   </tr>
+  </tfoot>
  </table>
- <br>
- <div>TOTAL transfer</div> 
- <div class="total-output"><%= Transfer.sum(:amount) %>
- </div>
 </div>

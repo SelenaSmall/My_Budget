@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'mybudgets#index'
+  root 'mybudgets#new'
 
   resources :mybudgets, except: [:index] do
     resources :incomes, except: [:show, :index]

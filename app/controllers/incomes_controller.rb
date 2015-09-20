@@ -32,9 +32,22 @@ def update
 	respond_to do |format|
     	if @income.update(income_params)
 	  	  format.html { redirect_to edit_income_path(@income)}
-		end
-	end
-end
+        format.json { render :show, status: :ok, location: @income }
+        format.js {redirect_via_turbolinks_to [@mybudget, @incomes]}
+      else
+        format.html { render :edit }
+        format.json { render json: @income.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @income.destroy
+    respond_to do |format|
+      format.html { redirect_to mybudget_incomes_path(@mybudget), notice: 'user was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
     def set_mybudget
