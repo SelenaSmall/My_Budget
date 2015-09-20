@@ -30,12 +30,22 @@ class MybudgetsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @mybudget.update(mybudget_params)
+        format.html { redirect_to edit_mybudget_path(@mybudget)}
+        format.json { render :show, status: :ok, location: @mybudget }
+        format.js {redirect_via_turbolinks_to [mybudget]}
+      else
+        format.html { render :edit }
+        format.json { render json: @mybudget.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @mybudget.destroy
     respond_to do |format|
-      format.html { redirect_to mybudgets_home_path(@mybudget), notice: 'mybudget was successfully destroyed.' }
+      format.html { redirect_to new_mybudgets_path(@mybudget), notice: 'user was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

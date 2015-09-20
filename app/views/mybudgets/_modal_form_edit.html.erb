@@ -1,0 +1,27 @@
+<div class="modal-dialog reorder-modal-form">
+ <div class="bordered-form">
+  <div class="modal-content">
+   <%= form_for [@mybudget] do |f| %>
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Budget</h4>
+
+     <center>
+      <div class="modal-body">
+       <table  class="modal-form-table">
+        <tr>
+         <td class="field"><%= f.text_field :name %></td>
+        <tr>
+         <td class="field"><%= f.number_field :open_bal, :step => 0.01 %></td>
+        </tr>
+       </table>
+      </div>
+    </center>
+
+
+    <div class="actions">
+     <%= f.submit %>
+    </div>
+   </centre>
+  <% end %>
+ </div>
+</div>

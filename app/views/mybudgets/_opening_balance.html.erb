@@ -1,12 +1,18 @@
 <div class="bordered-form">
  <div class="summary-row">
 	 <table class="table">
-	 	<tbody class="bordered-form-total">
+	  <tbody class="bordered-form-total">
 	   <tr>
 	    <td class="table-items" id="total-field-name">OPENING BALANCE</td>
-		 	 <td class="amount" id="total-field">$<%= @mybudget.open_bal %></td>
-		  </tr>
-		 </tbody>
+		<td class="amount" id="total-field">$<%= @mybudget.open_bal %></td>
+		<td>
+			<%= link_to edit_mybudget_path(@mybudget), 
+       			remote: true, id: "edit-item-link", class: "btn btn-sm btn-default round" do %>Edit
+      		<%end%>
+		</td>
+
+	   </tr>
+	  </tbody>
 	 </table>
  </div>
 </div>
