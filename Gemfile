@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails_12factor'
+
 gem 'rails', '4.2.3'
 
 gem 'pg'
