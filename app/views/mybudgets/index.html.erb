@@ -15,7 +15,7 @@
     <% @mybudget.each do |mybudget| %>
      <tr>
       <td><%= mybudget.name %></td>
-      <td><%= mybudget.open_bal %></td> 
+      <td><%= mybudget.open_bal, :step => 0.01 %></td> 
      </tr>
     <% end %>
    </tbody>

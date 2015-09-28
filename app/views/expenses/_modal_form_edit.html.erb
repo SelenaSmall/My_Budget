@@ -13,7 +13,7 @@
          <td class="field"><%= f.text_field :expense %></td>
         </tr>
         <tr>
-         <td class="field"><%= f.number_field :amount %></td>
+         <td class="field"><%= f.number_field :amount, :step => 0.01 %></td>
         </tr>
        </table>
       </div>
