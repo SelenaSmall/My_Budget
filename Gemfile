@@ -6,8 +6,6 @@ gem 'rails_12factor'
 
 gem 'puma'
 
-gem 'money-rails'
-
 gem 'rails', '4.2.3'
 
 gem 'pg'
