@@ -1,6 +1,4 @@
-<div class="application">
- <div class="mybudget-layout"> 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
   <html>
   <head>
    <title>MyBudget</title>
@@ -8,12 +6,13 @@
    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
    <%= csrf_meta_tags %>
   </head>
-  <body>
 
-   <nav class="navbar navbar-default">
-    <div class="container-fluid">
-     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+<body>
+ <div class="application page-body col-sm-6 col-sm-offset-3">
+  <div class="mybudget-layout"> 
+    <div class="row">
+     <nav >
+      <ul >
        <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN/OUT <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -25,7 +24,7 @@
         </ul>
        </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul >
        <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MENU <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -33,12 +32,12 @@
         </ul>
        </li>
       </ul>
-     </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
    </nav>
+   </div>
    
    <%= yield %>
-  </body>
-  </html>
- </div>
+  </div>
 </div>
+  </body>
+</html>
+

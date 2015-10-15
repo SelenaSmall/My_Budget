@@ -1,11 +1,14 @@
+body {
+	background-color: #D6EAFF;
+}
+
 .application {
 	background-color: #D6EAFF;
 	padding-top: 15px;
 	text-align: center;
 
 	.mybudget-layout {
-  padding-left:300;
-  padding-right:300;
+
 	}
 
 	.h1 {
@@ -40,9 +43,16 @@
 
 }
 
+nav {
+	ul {
+		list-style:none;
+		float:right;
+		li {float:left;}
+	}
+
+}
+
 .navbar-default {
- margin-left: 500px;
-	margin-right: 500px;
 	margin-bottom: 0px;
 	background-color: #D6EAFF;
 	border: none;
@@ -54,9 +64,8 @@
 }
 
 .bordered-form {
- 	padding: 20px;
+ 	//padding: 20px;
  	background-color: #ADD6FF;
- 	width: 750px;
 
   .bordered-form-header {
 	 	font-size: -webkit-xxx-large;

@@ -1,15 +1,9 @@
-<div class="row">
- <div class="page-body">
-	 <center>
-		 <div>
-		 	<%= render 'header' %>
-		 	<%= render 'opening_balance' %>
-				<%= render 'mybudgets/incomes' %>
-				<%= render 'mybudgets/expenses' %>
-				<%= render 'mybudgets/transfers' %>
-				<%= render 'balance' %>
-		 </div>	 	
-		</center>
+<%= render 'header' %>
+<%= render 'opening_balance' %>
+<%= render 'mybudgets/incomes' %>
+<%= render 'mybudgets/expenses' %>
+<%= render 'mybudgets/transfers' %>
+<%= render 'balance' %>	
 
 	 <!-- Modal form -->
 	 <div class="modal fade" id='new-income-modal-form' role='dialog'></div>
@@ -23,5 +17,3 @@
 
 	 <div class="modal fade" id='edit-mybudget-modal-form' role='dialog'></div>
 	 <!-- Modal form -->
- </div>
-</div>

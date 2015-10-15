@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title MyBudget
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .application.page-body.col-sm-6.col-sm-offset-3
+      .mybudget-layout
+        .row
+          %nav
+            %ul
+              %li.dropdown
+                %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  LOGIN/OUT
+                  %span.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} List
+                  %li
+                    %a{:href => "#"} of
+                  %li
+                    %a{:href => "#"} Users
+                  %li.divider{:role => "separator"}
+                  %li
+                    %a{:href => "#"} Create New User
+            %ul
+              %li.dropdown
+                %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  MENU
+                  %span.caret
+                %ul.dropdown-menu
+                  %li.divider{:role => "separator"}
+        = yield
